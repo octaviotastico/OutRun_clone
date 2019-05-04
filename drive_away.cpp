@@ -48,5 +48,36 @@ int main() {
   sBackground.setTextureRect(IntRect(0, 300, 5000, 411));
   sBackground.setPosition(-2000, 0);
 
+  // Set car size and position
+  car_object.setPosition(355, 400);
+  car_object.setScale(2.f, 2.f);
+
+  // Everithing in screen
+  vector<Line> scene;
+
+  // Pre-render all stuff in a vector to display it later.
+  fore(i, 0, draw_distance) {
+    
+    Line line;
+    line.z = i * segment;
+
+    // Movement in X axes
+    if (i > 300 && i < 700) line.curve = 0.5;
+    if (i > 700 && i < 1100) line.curve = -0.5;
+    if (i > 1500 && i < 1600) line.curve = 0.5;
+    if (i > 1800 && i < 2000) line.curve = -0.5;
+    
+    // Movement in Y axes
+    // if (i > 750) line.y = sin(i / 30.0) * 1500;
+
+    // Drawing palms
+    if (i % 30 == 0) { line.spriteX = +1.3; line.sprite = palm_object; }
+    if (i % 31 == 0) { line.spriteX = -2.0; line.sprite = palm_object; }
+
+    // Put what's calculated in vector
+    scene.pb(line);
+  
+  }
+
   return 0;
 }
