@@ -2,7 +2,7 @@
 
 OutRun was a videogame back in the 80's for Sega console.    
 I wanted to draw stuff with C, and I found the [SFML Library], and I had to try it.    
-I was a lot of fun, and I hope you like the result!    
+It was a lot of fun, and I hope you like the result!    
 
 ### How to compile:    
 
